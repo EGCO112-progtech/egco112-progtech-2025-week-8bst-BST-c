@@ -79,19 +79,6 @@ while(!inserted){
 }//end function
 
 
-void inOrder( TreeNodePtr treePtr )
-{ 
-   // if tree is not empty, then traverse
-   if ( treePtr != NULL ) {        
-        
-      inOrder( treePtr->leftPtr ); //Recursion to the left
- 
-      printf("%3d",treePtr->data) ;  //print the value 
-   
-      inOrder( treePtr->rightPtr ); //Recursion to the right
-   } // end if                          
-} // end 
-
 void preOrder( TreeNodePtr treePtr )
 {
    if ( treePtr != NULL ) {        
@@ -116,6 +103,18 @@ void postOrder ( TreeNodePtr treePtr )
    }
 }
 
+void inOrder( TreeNodePtr treePtr )
+{ 
+   // if tree is not empty, then traverse
+   if ( treePtr != NULL ) {        
+        
+      inOrder( treePtr->leftPtr ); //Recursion to the left
+ 
+      printf("%3d",treePtr->data) ;  //print the value 
+   
+      inOrder( treePtr->rightPtr ); //Recursion to the right
+   } // end if                          
+} // end 
 
 void printTree ( TreeNodePtr treePtr , int level)
 {
