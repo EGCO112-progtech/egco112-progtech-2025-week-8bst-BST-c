@@ -29,6 +29,6 @@ for ( i = 1; i < argc; ++i ) {
     printf("\n");
 
     printf("The treeOrder traversal is:\n");
-    printTree( b.root );
+    printTree( b.root , 0);
 } // end main
 

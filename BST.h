@@ -117,17 +117,18 @@ void postOrder ( TreeNodePtr treePtr )
 }
 
 
-void printTree ( TreeNodePtr treePtr )
+void printTree ( TreeNodePtr treePtr , int level)
 {
-   int level;
    if ( treePtr != NULL ) {    
-      printTree( treePtr->leftPtr); //Recursion to the left
-      level++;
+      printTree(treePtr->rightPtr, level+1);
 
-      printTree( treePtr->rightPtr); //Recursion to the right
+      for(int i=0; i<level; i++)
+      {
+         printf("   ");
+      }
 
-      printf("%3d",treePtr->data) ;  //print the value 
-      printf("\n");
-   
+      printf("%3d\n",treePtr->data) ;  //print the value 
+
+      printTree( treePtr->leftPtr, level+1); //Recursion to the left
    }
 }
