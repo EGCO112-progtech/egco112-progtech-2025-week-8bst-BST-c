@@ -91,3 +91,43 @@ void inOrder( TreeNodePtr treePtr )
       inOrder( treePtr->rightPtr ); //Recursion to the right
    } // end if                          
 } // end 
+
+void preOrder( TreeNodePtr treePtr )
+{
+   if ( treePtr != NULL ) {        
+      printf("%3d",treePtr->data) ;  //print the value 
+        
+      preOrder( treePtr->leftPtr ); //Recursion to the left
+   
+      preOrder( treePtr->rightPtr ); //Recursion to the right
+
+   }
+}
+
+void postOrder ( TreeNodePtr treePtr )
+{
+   if ( treePtr != NULL ) {       
+      postOrder( treePtr->leftPtr ); //Recursion to the left
+
+      postOrder( treePtr->rightPtr ); //Recursion to the right
+
+      printf("%3d",treePtr->data) ;  //print the value 
+   
+   }
+}
+
+
+void printTree ( TreeNodePtr treePtr )
+{
+   int level;
+   if ( treePtr != NULL ) {    
+      printTree( treePtr->leftPtr); //Recursion to the left
+      level++;
+
+      printTree( treePtr->rightPtr); //Recursion to the right
+
+      printf("%3d",treePtr->data) ;  //print the value 
+      printf("\n");
+   
+   }
+}
